@@ -44,11 +44,6 @@ export async function hideTree() {
  */
 export async function showTreeIfEnabled() {
   try {
-    const env = await system.getEnv();
-    if (env === "server") {
-      return;
-    }
-
     if (await isTreeViewEnabled()) {
       return await showTree();
     }
